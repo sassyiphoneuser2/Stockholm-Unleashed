@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockholm Unleashed - Audio Tour</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .location-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            text-align: center;
+        }
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+        .location-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .location-card p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        .location-emoji {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎧 Stockholm Unleashed</h1>
+        <p class="subtitle">Audio Tour of Stockholm</p>
+
+        <div class="intro">
+            <p>Discover the hidden stories and rich history of Stockholm through our immersive audio tour. Click on any location below to start exploring!</p>
+        </div>
+
+        <div class="locations-grid">
+            <a href="stortorget.html" class="location-card">
+                <span class="location-emoji">🏛️</span>
+                <h3>Stortorget</h3>
+                <p>The historic main square and heart of Gamla Stan</p>
+            </a>
+
+            <a href="riddarholmen.html" class="location-card">
+                <span class="location-emoji">⛪</span>
+                <h3>Riddarholmen</h3>
+                <p>The island of knights and royal burial ground</p>
+            </a>
+
+            <a href="evertTaubesTerrass.html" class="location-card">
+                <span class="location-emoji">🎵</span>
+                <h3>Evert Taubes Terrass</h3>
+                <p>Musical heritage overlooking the water</p>
+            </a>
+
+            <a href="martengrand.html" class="location-card">
+                <span class="location-emoji">🏘️</span>
+                <h3>Mårten Trotzig Gränd</h3>
+                <p>Stockholm's narrowest alley with medieval charm</p>
+            </a>
+
+            <a href="Bookshop.html" class="location-card">
+                <span class="location-emoji">📚</span>
+                <h3>The Bookshop</h3>
+                <p>Literary treasures in the old town</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
