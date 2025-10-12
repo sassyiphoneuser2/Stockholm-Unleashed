@@ -145,4 +145,17 @@
                     isPlaying = true;
                 }).catch(err => {
                     status.textContent = 'Tap again to play';
-                    console.error('Play
+                    console.error('Playback failed:', err);
+                });
+            }
+        }
+
+        audio.addEventListener('ended', () => {
+            playBtn.innerHTML = '▶';
+            status.textContent = 'Ready to play';
+            wave.classList.remove('playing');
+            isPlaying = false;
+        });
+    </script>
+</body>
+</html>
