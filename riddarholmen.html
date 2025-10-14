@@ -68,7 +68,15 @@
             min-height: 24px;
         }
         audio {
-            display: none;
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
         }
         .wave {
             display: flex;
@@ -101,25 +109,36 @@
         }
 
         .challenge-section {
-            margin-top: 40px;
-            padding: 30px;
+            margin-top: 30px;
+            padding: 25px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: left;
         }
 
         .challenge-title {
             color: #333;
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 12px;
             text-align: center;
         }
 
         .challenge-text {
             color: #555;
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: center;
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: left;
+            margin: 0;
+        }
+
+        .challenge-text {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.4;
+            text-align: left;
+            margin: 0;
+            padding-left: 0;
         }
     </style>
 </head>
@@ -138,7 +157,7 @@
         
         <button class="play-button" id="playBtn" onclick="togglePlay()">▶</button>
         
-        <audio id="audioPlayer" preload="auto">
+        <audio id="audioPlayer" preload="auto" controls>
             <source src="audio/riddarholmen.mp3" type="audio/mpeg">
         </audio>
         
@@ -146,12 +165,12 @@
 
         <div class="challenge-section">
             <h3 class="challenge-title">🎯 Riddarholmen Church</h3>
-            <p class="challenge-text">
-                • Spend 3 minutes listening to this place<br>
-                • Take a photo of this location<br>
-                • Brainstorm as a team: How could Storytel recommend stories based on environment and mood?<br>
+            <div class="challenge-text">
+                • Spend 3 minutes listening to this place<br><br>
+                • Take a photo of this location<br><br>
+                • Brainstorm as a team: How could Storytel recommend stories based on environment and mood?<br><br>
                 • Write down your best idea
-            </p>
+            </div>
         </div>
     </div>
 

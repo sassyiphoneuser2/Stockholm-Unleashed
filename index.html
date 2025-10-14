@@ -65,6 +65,26 @@
             font-size: 16px;
             opacity: 0.9;
             line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        .location-address {
+            display: inline-block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+        .location-address:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            transform: translateY(-1px);
+            border-color: rgba(255, 255, 255, 0.4);
         }
         .location-emoji {
             font-size: 48px;
@@ -90,35 +110,50 @@
         </div>
 
         <div class="locations-grid">
-            <a href="stortorget.html" class="location-card">
-                <span class="location-emoji">🏛️</span>
-                <h3>Stortorget</h3>
-                <p>The historic main square and heart of Gamla Stan</p>
-            </a>
+            <div class="location-card">
+                <a href="stortorget.html" style="text-decoration: none; color: inherit;">
+                    <span class="location-emoji">🏛️</span>
+                    <h3>Stortorget</h3>
+                    <p>The historic main square and heart of Gamla Stan</p>
+                </a>
+                <a href="https://maps.google.com/?q=Stortorget,+Gamla+Stan,+Stockholm" target="_blank" class="location-address">📍 Stortorget, Gamla Stan</a>
+            </div>
 
-            <a href="riddarholmen.html" class="location-card">
-                <span class="location-emoji">⛪</span>
-                <h3>Riddarholmen</h3>
-                <p>The island of knights and royal burial ground</p>
-            </a>
+            <div class="location-card">
+                <a href="riddarholmen.html" style="text-decoration: none; color: inherit;">
+                    <span class="location-emoji">⛪</span>
+                    <h3>Riddarholmen</h3>
+                    <p>The island of knights and royal burial ground</p>
+                </a>
+                <a href="https://maps.google.com/?q=Riddarholmskyrkan,+Riddarholmen,+Stockholm" target="_blank" class="location-address">📍 Riddarholmskyrkan, Riddarholmen</a>
+            </div>
 
-            <a href="evertTaubesTerrass.html" class="location-card">
-                <span class="location-emoji">🎵</span>
-                <h3>Evert Taubes Terrass</h3>
-                <p>Musical heritage overlooking the water</p>
-            </a>
+            <div class="location-card">
+                <a href="evertTaubesTerrass.html" style="text-decoration: none; color: inherit;">
+                    <span class="location-emoji">🎵</span>
+                    <h3>Evert Taubes Terrass</h3>
+                    <p>Musical heritage overlooking the water</p>
+                </a>
+                <a href="https://maps.google.com/?q=Evert+Taubes+Terrass,+Stockholm" target="_blank" class="location-address">📍 Evert Taubes Terrass</a>
+            </div>
 
-            <a href="martengrand.html" class="location-card">
-                <span class="location-emoji">🏘️</span>
-                <h3>Mårten Trotzig Gränd</h3>
-                <p>Stockholm's narrowest alley with medieval charm</p>
-            </a>
+            <div class="location-card">
+                <a href="martengrand.html" style="text-decoration: none; color: inherit;">
+                    <span class="location-emoji">🏘️</span>
+                    <h3>Mårten Trotzig Gränd</h3>
+                    <p>Stockholm's narrowest alley with medieval charm</p>
+                </a>
+                <a href="https://maps.google.com/?q=Mårten+Trotzigs+Gränd,+Gamla+Stan,+Stockholm" target="_blank" class="location-address">📍 Mårten Trotzigs Gränd, Gamla Stan</a>
+            </div>
 
-            <a href="Bookshop.html" class="location-card">
-                <span class="location-emoji">📚</span>
-                <h3>The Bookshop</h3>
-                <p>Literary treasures in the old town</p>
-            </a>
+            <div class="location-card">
+                <a href="Bookshop.html" style="text-decoration: none; color: inherit;">
+                    <span class="location-emoji">📚</span>
+                    <h3>The Bookshop</h3>
+                    <p>Literary treasures in the old town</p>
+                </a>
+                <a href="https://www.google.com/maps/place/Science+Fiction+Bokhandeln,+Västerlånggatan+48,+111+29+Stockholm/@59.3240471,18.0705284,17z/data=!3m1!4b1!4m6!3m5!1s0x465f77e2f7173dd7:0xcba96a716b9a3260!8m2!3d59.3240471!4d18.0705284!16s%2Fg%2F1tg4_0y1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-address">📍 Science Fiction Bokhandeln</a>
+            </div>
         </div>
     </div>
 </body>

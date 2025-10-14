@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marten Grand Audio</title>
+    <title>Mårten Trotzigs Gränd Audio</title>
     <style>
         * {
             margin: 0;
@@ -68,7 +68,15 @@
             min-height: 24px;
         }
         audio {
-            display: none;
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
         }
         .wave {
             display: flex;
@@ -101,8 +109,8 @@
         }
 
         .challenge-section {
-            margin-top: 40px;
-            padding: 30px;
+            margin-top: 30px;
+            padding: 25px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -110,23 +118,42 @@
 
         .challenge-title {
             color: #333;
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 12px;
             text-align: center;
         }
 
         .challenge-text {
             color: #555;
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: center;
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: left;
+            margin: 0;
+        }
+
+        .challenge-list {
+            margin: 0;
+            padding-left: 20px;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .challenge-list li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+
+        .challenge-list li:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🏛️ Marten Grand</h1>
+        <h1>🏘️ Mårten Trotzigs Gränd</h1>
         <p class="subtitle">Tap to play audio</p>
+        <p class="subtitle" style="font-size: 14px; margin-top: 10px; color: #888;">Please listen to the recording before going up or down the steps</p>
         
         <div class="wave" id="wave">
             <div class="wave-bar"></div>
@@ -138,7 +165,7 @@
         
         <button class="play-button" id="playBtn" onclick="togglePlay()">▶</button>
         
-        <audio id="audioPlayer" preload="auto">
+        <audio id="audioPlayer" preload="auto" controls>
             <source src="audio/martengrand.mp3" type="audio/mpeg">
         </audio>
         
@@ -146,12 +173,12 @@
 
         <div class="challenge-section">
             <h3 class="challenge-title">🎯 Mårten Trotzigs Gränd</h3>
-            <p class="challenge-text">
-                • Walk through this alley slowly - really slowly, notice everything<br>
-                • Walk back through quickly. Feel the difference?<br>
-                • Brainstorm as a team: How could Storytel adapt to your pace, movement, or available time?<br>
-                • Write down your idea
-            </p>
+            <ul class="challenge-list">
+                <li>Walk through this alley slowly - really slowly, notice everything</li>
+                <li>Walk back through quickly. Feel the difference?</li>
+                <li>Brainstorm as a team: How could Storytel adapt to your pace, movement, or available time?</li>
+                <li>Write down your idea</li>
+            </ul>
         </div>
     </div>
 
