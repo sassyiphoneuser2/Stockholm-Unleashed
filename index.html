@@ -13,7 +13,7 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #ff501c;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 25%, #ec4899 50%, #f97316 75%, #ff501c 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -44,14 +44,58 @@
             margin-top: 30px;
         }
         .location-card {
-            background: #ff501c;
+            position: relative;
             color: white;
             padding: 30px;
             border-radius: 15px;
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .location-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 80, 28, 0.85) 0%, rgba(255, 122, 89, 0.85) 100%);
+            border-radius: 15px;
+        }
+
+        .location-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .location-card.stortorget {
+            background-image: url('images/stortorget.jpg');
+        }
+
+        .location-card.riddarholmen {
+            background-image: url('images/riddarholmen.jpg');
+        }
+
+        .location-card.evert-taubes {
+            background-image: url('images/evertTaubes.jpg');
+        }
+
+        .location-card.marten-grand {
+            background-image: url('images/martengrand.jpg');
+        }
+
+        .location-card.bookshop {
+            background-image: url('images/bookshop.jpg');
         }
         .location-card:hover {
             transform: translateY(-5px);
@@ -110,7 +154,7 @@
         </div>
 
         <div class="locations-grid">
-            <div class="location-card">
+            <div class="location-card stortorget">
                 <a href="stortorget.html" style="text-decoration: none; color: inherit;">
                     <span class="location-emoji">🏛️</span>
                     <h3>Stortorget</h3>
@@ -119,7 +163,7 @@
                 <a href="https://maps.google.com/?q=Stortorget,+Gamla+Stan,+Stockholm" target="_blank" class="location-address">📍 Stortorget, Gamla Stan</a>
             </div>
 
-            <div class="location-card">
+            <div class="location-card riddarholmen">
                 <a href="riddarholmen.html" style="text-decoration: none; color: inherit;">
                     <span class="location-emoji">⛪</span>
                     <h3>Riddarholmen</h3>
@@ -128,7 +172,7 @@
                 <a href="https://maps.google.com/?q=Riddarholmskyrkan,+Riddarholmen,+Stockholm" target="_blank" class="location-address">📍 Riddarholmskyrkan, Riddarholmen</a>
             </div>
 
-            <div class="location-card">
+            <div class="location-card evert-taubes">
                 <a href="evertTaubesTerrass.html" style="text-decoration: none; color: inherit;">
                     <span class="location-emoji">🎵</span>
                     <h3>Evert Taubes Terrass</h3>
@@ -137,7 +181,7 @@
                 <a href="https://maps.google.com/?q=Evert+Taubes+Terrass,+Stockholm" target="_blank" class="location-address">📍 Evert Taubes Terrass</a>
             </div>
 
-            <div class="location-card">
+            <div class="location-card marten-grand">
                 <a href="martengrand.html" style="text-decoration: none; color: inherit;">
                     <span class="location-emoji">🏘️</span>
                     <h3>Mårten Trotzig Gränd</h3>
@@ -146,7 +190,7 @@
                 <a href="https://maps.google.com/?q=Mårten+Trotzigs+Gränd,+Gamla+Stan,+Stockholm" target="_blank" class="location-address">📍 Mårten Trotzigs Gränd, Gamla Stan</a>
             </div>
 
-            <div class="location-card">
+            <div class="location-card bookshop">
                 <a href="Bookshop.html" style="text-decoration: none; color: inherit;">
                     <span class="location-emoji">📚</span>
                     <h3>The Bookshop</h3>

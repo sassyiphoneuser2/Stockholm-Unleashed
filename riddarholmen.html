@@ -12,7 +12,7 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #ff501c;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 25%, #ec4899 50%, #f97316 75%, #ff501c 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -132,13 +132,33 @@
             margin: 0;
         }
 
-        .challenge-text {
+        .challenge-list {
             color: #555;
             font-size: 15px;
-            line-height: 1.4;
+            line-height: 1.6;
             text-align: left;
             margin: 0;
-            padding-left: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .challenge-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .challenge-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .challenge-list li::before {
+            content: "•";
+            color: #ff501c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
     </style>
 </head>
@@ -165,12 +185,12 @@
 
         <div class="challenge-section">
             <h3 class="challenge-title">🎯 Riddarholmen Church</h3>
-            <div class="challenge-text">
-                • Spend 3 minutes listening to this place<br><br>
-                • Take a photo of this location<br><br>
-                • Brainstorm as a team: How could Storytel recommend stories based on environment and mood?<br><br>
-                • Write down your best idea
-            </div>
+            <ul class="challenge-list">
+                <li>Spend 3 minutes listening to this place</li>
+                <li>Take a photo of this location</li>
+                <li>Brainstorm as a team: How could Storytel recommend stories based on environment and mood?</li>
+                <li>Write down your best idea</li>
+            </ul>
         </div>
     </div>
 
