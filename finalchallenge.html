@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Challenge Audio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 25%, #ec4899 50%, #f97316 75%, #ff501c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .play-button {
+            background: linear-gradient(135deg, #ff501c 0%, #ff7a59 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            font-size: 48px;
+            cursor: pointer;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 10px 30px rgba(255, 80, 28, 0.4);
+        }
+        .play-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 80, 28, 0.6);
+        }
+        .play-button:active {
+            transform: scale(0.95);
+        }
+        .status {
+            color: #666;
+            margin-top: 20px;
+            font-size: 16px;
+            min-height: 24px;
+        }
+        audio {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+        }
+        .wave {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin: 20px 0;
+            height: 40px;
+            align-items: center;
+        }
+        .wave-bar {
+            width: 4px;
+            background: #ff501c;
+            border-radius: 2px;
+            animation: wave 1s ease-in-out infinite;
+            opacity: 0;
+        }
+        .wave-bar:nth-child(1) { animation-delay: 0s; }
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+
+        .playing .wave-bar {
+            opacity: 1;
+        }
+
+        @keyframes wave {
+            0%, 100% { height: 10px; }
+            50% { height: 40px; }
+        }
+
+        .challenge-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .challenge-title {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .challenge-list {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .challenge-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .challenge-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .challenge-list li::before {
+            content: "•";
+            color: #ff501c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Final Challenge</h1>
+        <p class="subtitle">Tap to play audio</p>
+
+        <div class="wave" id="wave">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+        </div>
+
+        <button class="play-button" id="playBtn" onclick="togglePlay()">▶</button>
+
+        <audio id="audioPlayer" preload="auto" controls>
+            <source src="audio/finalchallenge.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="status" id="status">Ready to play</div>
+
+        <div class="challenge-section">
+            <h3 class="challenge-title">🎯 Final Challenge</h3>
+            <ul class="challenge-list">
+                <li>Reflect on your Stockholm journey - what surprised you most?</li>
+                <li>Share your favorite moment from the audio tour with your team</li>
+                <li>Brainstorm together: How could Storytel create personalized city experiences based on your interests and pace?</li>
+                <li>Write down your ultimate Storytel feature idea</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audioPlayer');
+        const playBtn = document.getElementById('playBtn');
+        const status = document.getElementById('status');
+        const wave = document.getElementById('wave');
+        let isPlaying = false;
+
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.innerHTML = '▶';
+                status.textContent = 'Paused';
+                wave.classList.remove('playing');
+                isPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    playBtn.innerHTML = '⏸';
+                    status.textContent = 'Playing...';
+                    wave.classList.add('playing');
+                    isPlaying = true;
+                }).catch(err => {
+                    status.textContent = 'Tap again to play';
+                    console.error('Playback failed:', err);
+                });
+            }
+        }
+
+        audio.addEventListener('ended', () => {
+            playBtn.innerHTML = '▶';
+            status.textContent = 'Ready to play';
+            wave.classList.remove('playing');
+            isPlaying = false;
+        });
+    </script>
+</body>
+</html>
