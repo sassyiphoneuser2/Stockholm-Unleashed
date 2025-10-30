@@ -282,6 +282,33 @@
         let isPlaying = false;
         let isDragging = false;
 
+        // Audio boost setup
+        let audioContext;
+        let gainNode;
+        let source;
+        let isAudioContextSetup = false;
+
+        function setupAudioBoost() {
+            if (isAudioContextSetup) return;
+
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                gainNode = audioContext.createGain();
+                source = audioContext.createMediaElementSource(audio);
+
+                // Boost volume to 2x (200%)
+                gainNode.gain.value = 2.0;
+
+                source.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                isAudioContextSetup = true;
+                console.log('Audio boost enabled: 200% volume');
+            } catch (error) {
+                console.log('Audio boost not available:', error);
+            }
+        }
+
         function togglePlay() {
             if (isPlaying) {
                 audio.pause();
@@ -290,6 +317,7 @@
                 wave.classList.remove('playing');
                 isPlaying = false;
             } else {
+                setupAudioBoost();
                 audio.play().then(() => {
                     playBtn.innerHTML = '❚❚';
                     status.textContent = 'Playing...';
