@@ -206,6 +206,30 @@
             color: #666;
             margin-top: 8px;
         }
+
+        .back-button {
+            display: block;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-top: 25px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -248,6 +272,8 @@
                 <li>Note down your best social feature idea</li>
             </ul>
         </div>
+
+        <a href="index.html" class="back-button">← Back to Locations</a>
     </div>
 
     <script>
